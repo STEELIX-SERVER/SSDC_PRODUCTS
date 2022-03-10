@@ -2,7 +2,7 @@ const axios = require('axios');
 const pool = require('./pool.js');
 
 module.exports = {
-  readList: function (page = 1, count = 10) {
+  readAll: function (page = 1, count = 10) {
     return pool.connect().then((client) => {
       const query = `SELECT * FROM products
         LIMIT $2 OFFSET $1`;

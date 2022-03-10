@@ -1,14 +1,14 @@
 const {
-  readList,
+  readAll,
   readProduct,
   readStyles,
   readRelated,
 } = require('./models.js');
 
 module.exports = {
-  getList: function (req, res) {
+  getAll: function (req, res) {
     const { page, count } = req.query;
-    readList(page, count)
+    readAll(page, count)
       .then((results) => {
         res.send(results);
       })
