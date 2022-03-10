@@ -9,6 +9,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
 
+app.use("/products", router);
+
 
 app.listen(port, () => {
   console.log(`Server listening on port: ${port}`);
