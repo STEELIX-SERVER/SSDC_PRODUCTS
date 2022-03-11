@@ -1,11 +1,18 @@
 const router = require ('express').Router();
-
 const {
   getAll,
   getProduct,
   getStyles,
   getRelated,
 } = require("./controller.js");
+
+router.get(`/${process.env.LOADERIO_TOKEN}`, async (req, res) => {
+  try {
+    res.send(process.env.LOADERIO_TOKEN);
+  } catch (error) {
+    res.send(error);
+  }
+});
 
 router.get("/products", getAll);
 
